@@ -5,8 +5,13 @@
  * Automatically injects the Bearer token from AsyncStorage.
  */
 
+import { Platform } from 'react-native';
+
 // ── Change this to your Laravel server URL ──────────────────────────────────
-const BASE_URL = 'http://192.168.31.221:8000/api';
+// On web, use localhost to avoid CORS. On mobile, use the LAN IP.
+const BASE_URL = Platform.OS === 'web' 
+  ? 'http://localhost:8000/api' 
+  : 'http://192.168.31.221:8000/api';
 
 // ── Token helpers ────────────────────────────────────────────────────────────
 let memoryToken = null;

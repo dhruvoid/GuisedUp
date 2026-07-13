@@ -1,0 +1,56 @@
+# ============================================================
+# Guised Up — Root .gitignore
+# ============================================================
+
+# ── Laravel Backend ──────────────────────────────────────────
+backend/vendor/
+backend/node_modules/
+backend/public/build/
+backend/public/hot
+backend/public/storage
+backend/storage/*.key
+backend/storage/framework/cache/
+backend/storage/framework/sessions/
+backend/storage/framework/testing/
+backend/storage/framework/views/
+backend/storage/logs/
+backend/bootstrap/cache/
+backend/.env
+backend/.env.backup
+backend/.env.production
+backend/.phpunit.result.cache
+backend/composer.phar
+backend/error.json
+backend/test_*.php
+backend/clear_opcache.php
+
+# ── Python ML Service ────────────────────────────────────────
+ml-service/__pycache__/
+ml-service/*.py[cod]
+ml-service/.env
+ml-service/venv/
+ml-service/env/
+ml-service/.pytest_cache/
+
+# ── React Native / Expo Mobile ───────────────────────────────
+mobile/node_modules/
+mobile/.expo/
+mobile/dist/
+mobile/.env
+mobile/.env.local
+mobile/.env.production
+mobile/.claude/
+mobile/CLAUDE.md
+mobile/AGENTS.md
+
+# ── OS & Editor ──────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+*.sqlite
+*.sqlite3
+.idea/
+.vscode/
+*.log
+
+# ── Scratch / extracted images ───────────────────────────────
+pdf_images/

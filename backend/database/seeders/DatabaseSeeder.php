@@ -13,88 +13,93 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         // -------------------------------------------------------
-        // Create 2 required test users
+        // Create 5 test users
         // -------------------------------------------------------
-        $user1 = User::firstOrCreate(
-            ['email' => 'priya@guisedup.com'],
-            [
-                'name'     => 'Priya Sharma',
-                'password' => Hash::make('password123'),
-            ]
-        );
-
-        $user2 = User::firstOrCreate(
-            ['email' => 'arjun@guisedup.com'],
-            [
-                'name'     => 'Arjun Mehta',
-                'password' => Hash::make('password123'),
-            ]
-        );
-
-        // -------------------------------------------------------
-        // Seed some posts for each user (with varied authenticity)
-        // -------------------------------------------------------
-        $posts1 = [
-            ['content' => 'Just had the most chaotic day at work — nothing went to plan and honestly I loved it', 'image_url' => null],
-            ['content' => 'Late night thought: do birds ever get bored?', 'image_url' => null],
-            ['content' => 'A photo from my balcony at sunrise. No filter, no edits.', 'image_url' => 'https://picsum.photos/seed/balcony/800/600'],
-            ['content' => 'Hot take: chai from a roadside stall > every specialty cafe in Bangalore', 'image_url' => null],
-            ['content' => '#productivity #hustle woke up at 5am and journaled for an hour', 'image_url' => 'https://picsum.photos/seed/morning/800/600'],
+        $usersData = [
+            ['email' => 'priya@guisedup.com', 'name' => 'Priya Sharma'],
+            ['email' => 'arjun@guisedup.com', 'name' => 'Arjun Mehta'],
+            ['email' => 'rahul@guisedup.com', 'name' => 'Rahul Desai'],
+            ['email' => 'sneha@guisedup.com', 'name' => 'Sneha Kapoor'],
+            ['email' => 'rohan@guisedup.com', 'name' => 'Rohan Singh'],
         ];
 
-        $posts2 = [
-            ['content' => 'Learning Rust. Send help.', 'image_url' => null],
-            ['content' => 'Mom made rajma chawal today. I do not deserve this.', 'image_url' => null],
-            ['content' => 'Been feeling a bit disconnected lately. Anyone else?', 'image_url' => null],
-            ['content' => 'New personal record — ran 5k in under 25 minutes', 'image_url' => 'https://picsum.photos/seed/running/800/600'],
-            ['content' => '#fitness #goals #motivation crushing it every single day 💪💪💪💪💪💪', 'image_url' => 'https://picsum.photos/seed/gym/800/600'],
+        $users = [];
+        foreach ($usersData as $ud) {
+            $users[] = User::firstOrCreate(
+                ['email' => $ud['email']],
+                [
+                    'name'     => $ud['name'],
+                    'password' => Hash::make('password123'),
+                ]
+            );
+        }
+
+        // -------------------------------------------------------
+        // Seed some posts for each user
+        // -------------------------------------------------------
+        $postsData = [
+            [
+                ['content' => 'Just had the most chaotic day at work — nothing went to plan and honestly I loved it', 'image_url' => null],
+                ['content' => 'Late night thought: do birds ever get bored?', 'image_url' => null],
+                ['content' => 'A photo from my balcony at sunrise. No filter, no edits.', 'image_url' => 'https://picsum.photos/seed/balcony/800/600'],
+            ],
+            [
+                ['content' => 'Learning Rust. Send help.', 'image_url' => null],
+                ['content' => 'Mom made rajma chawal today. I do not deserve this.', 'image_url' => null],
+                ['content' => 'New personal record — ran 5k in under 25 minutes', 'image_url' => 'https://picsum.photos/seed/running/800/600'],
+            ],
+            [
+                ['content' => 'I just spent 3 hours debugging only to realize I missed a semicolon.', 'image_url' => null],
+                ['content' => 'Why does pizza taste better at 2 AM?', 'image_url' => null],
+                ['content' => '#grindset always working never sleeping', 'image_url' => 'https://picsum.photos/seed/grind/800/600'],
+            ],
+            [
+                ['content' => 'Just finished reading the best book of my life. I am in tears.', 'image_url' => null],
+                ['content' => 'Here is my dog sleeping perfectly in a sunbeam.', 'image_url' => 'https://picsum.photos/seed/dog/800/600'],
+            ],
+            [
+                ['content' => 'Finally saved up enough to buy my dream guitar!', 'image_url' => 'https://picsum.photos/seed/guitar/800/600'],
+                ['content' => 'Is anyone else completely obsessed with the new sci-fi movie?', 'image_url' => null],
+            ],
         ];
 
         $authenticityScorer = app(\App\Services\FeedRankingService::class);
 
-        foreach ($posts1 as $postData) {
-            Post::create([
-                'user_id'           => $user1->id,
-                'content'           => $postData['content'],
-                'image_url'         => $postData['image_url'],
-                'authenticity_score'=> $authenticityScorer->computeAuthenticityScore(
-                    $postData['content'],
-                    $postData['image_url']
-                ),
-            ]);
-        }
-
-        foreach ($posts2 as $postData) {
-            Post::create([
-                'user_id'           => $user2->id,
-                'content'           => $postData['content'],
-                'image_url'         => $postData['image_url'],
-                'authenticity_score'=> $authenticityScorer->computeAuthenticityScore(
-                    $postData['content'],
-                    $postData['image_url']
-                ),
-            ]);
+        foreach ($postsData as $index => $userPosts) {
+            $user = $users[$index];
+            foreach ($userPosts as $postData) {
+                Post::create([
+                    'user_id'           => $user->id,
+                    'content'           => $postData['content'],
+                    'image_url'         => $postData['image_url'],
+                    'authenticity_score'=> $authenticityScorer->computeAuthenticityScore(
+                        $postData['content'],
+                        $postData['image_url']
+                    ),
+                ]);
+            }
         }
 
         // -------------------------------------------------------
-        // Seed some interactions (user1 reacts to user2's posts and vice versa)
-        // This populates the relationship-depth signal
+        // Seed some random interactions to simulate relationship depth
         // -------------------------------------------------------
-        $user2Posts = Post::where('user_id', $user2->id)->get();
-        $user1Posts = Post::where('user_id', $user1->id)->get();
-
-        foreach ($user2Posts->take(3) as $post) {
-            Interaction::firstOrCreate(['user_id' => $user1->id, 'post_id' => $post->id, 'type' => 'view']);
-            Interaction::firstOrCreate(['user_id' => $user1->id, 'post_id' => $post->id, 'type' => 'reaction']);
+        $allPosts = Post::all();
+        foreach ($users as $u) {
+            $filtered = $allPosts->where('user_id', '!=', $u->id);
+            $otherPosts = $filtered->random(min(4, $filtered->count()));
+            
+            foreach ($otherPosts as $post) {
+                Interaction::firstOrCreate(['user_id' => $u->id, 'post_id' => $post->id, 'type' => 'view']);
+                // 50% chance to react
+                if (rand(0, 1) === 1) {
+                    Interaction::firstOrCreate(['user_id' => $u->id, 'post_id' => $post->id, 'type' => 'reaction']);
+                }
+            }
         }
 
-        foreach ($user1Posts->take(2) as $post) {
-            Interaction::firstOrCreate(['user_id' => $user2->id, 'post_id' => $post->id, 'type' => 'view']);
+        $this->command->info('Seeded 5 users, ' . $allPosts->count() . ' posts, and random interactions.');
+        foreach ($usersData as $ud) {
+            $this->command->info('  ' . $ud['email'] . ' / password123');
         }
-
-        $this->command->info('Seeded 2 users, 10 posts, and sample interactions.');
-        $this->command->info('Test credentials:');
-        $this->command->info('  priya@guisedup.com / password123');
-        $this->command->info('  arjun@guisedup.com / password123');
     }
 }
