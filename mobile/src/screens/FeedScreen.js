@@ -28,7 +28,6 @@ import {
 import { getFeed, searchPosts, logInteraction } from '../services/api';
 import PostCard from '../components/PostCard';
 
-// ── Design Tokens ─────────────────────────────────────────────────────────────
 const COLORS = {
   background: '#0F0F14',
   card: '#1A1A24',
@@ -44,7 +43,6 @@ const COLORS = {
   success: '#5CFC8A',
 };
 
-// ── Skeleton Loader ───────────────────────────────────────────────────────────
 function SkeletonCard() {
   const opacity = useRef(new Animated.Value(0.3)).current;
 
@@ -72,7 +70,6 @@ function SkeletonCard() {
   );
 }
 
-// ── Empty State ───────────────────────────────────────────────────────────────
 function EmptyState({ message, emoji = '🌿' }) {
   return (
     <View style={styles.emptyContainer}>
@@ -83,7 +80,6 @@ function EmptyState({ message, emoji = '🌿' }) {
   );
 }
 
-// ── Error State ───────────────────────────────────────────────────────────────
 function ErrorState({ message, onRetry }) {
   return (
     <View style={styles.emptyContainer}>
@@ -99,7 +95,6 @@ function ErrorState({ message, onRetry }) {
   );
 }
 
-// ── Main Screen ───────────────────────────────────────────────────────────────
 export default function FeedScreen() {
   // Feed state
   const [posts, setPosts]             = useState([]);
@@ -119,8 +114,6 @@ export default function FeedScreen() {
 
   const searchDebounceRef = useRef(null);
   const flatListRef       = useRef(null);
-
-  // ── Feed loading ──────────────────────────────────────────────────────────
 
   const loadFeed = useCallback(async (pageNum = 1, append = false) => {
     try {
@@ -165,8 +158,6 @@ export default function FeedScreen() {
     }
   }, [loadingMore, hasMore, isSearching, page, loadFeed]);
 
-  // ── Search logic ──────────────────────────────────────────────────────────
-
   const handleSearchChange = (text) => {
     setSearchQuery(text);
 
@@ -202,8 +193,6 @@ export default function FeedScreen() {
     setSearchResults([]);
     setSearchError(null);
   };
-
-  // ── Render helpers ────────────────────────────────────────────────────────
 
   const displayData   = isSearching ? searchResults : posts;
   const isInitLoading = loading && posts.length === 0 && !isSearching;
@@ -244,8 +233,6 @@ export default function FeedScreen() {
     }
     return null;
   };
-
-  // ── Header (sticky) ───────────────────────────────────────────────────────
 
   const listHeader = (
     <View style={styles.headerContainer}>

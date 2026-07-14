@@ -15,9 +15,7 @@ class DatabaseSeeder extends Seeder
 {
     public function run(): void
     {
-        // -------------------------------------------------------
         // Create 5 test users
-        // -------------------------------------------------------
         $usersData = [
             ['email' => 'priya@guisedup.com', 'name' => 'Priya Sharma'],
             ['email' => 'arjun@guisedup.com', 'name' => 'Arjun Mehta'],
@@ -37,9 +35,7 @@ class DatabaseSeeder extends Seeder
             );
         }
 
-        // -------------------------------------------------------
         // Seed some posts for each user
-        // -------------------------------------------------------
         $postsData = [
             [
                 ['content' => 'Just had the most chaotic day at work — nothing went to plan and honestly I loved it', 'image_url' => null],
@@ -83,9 +79,7 @@ class DatabaseSeeder extends Seeder
             }
         }
 
-        // -------------------------------------------------------
         // Seed some random interactions to simulate relationship depth
-        // -------------------------------------------------------
         $allPosts = Post::all();
         foreach ($users as $u) {
             $filtered = $allPosts->where('user_id', '!=', $u->id);
@@ -105,10 +99,7 @@ class DatabaseSeeder extends Seeder
             $this->command->info('  ' . $ud['email'] . ' / password123');
         }
 
-        // -------------------------------------------------------
         // Upsert all post embeddings into the Python ML service
-        // so that semantic search works immediately after seeding.
-        // -------------------------------------------------------
         $this->command->info('Upserting post embeddings into ML service...');
         $embeddingService = app(EmbeddingService::class);
         $mlServiceUrl = config('services.ml_service.url', 'http://localhost:8001');

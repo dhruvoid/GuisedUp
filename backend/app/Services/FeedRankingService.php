@@ -122,7 +122,6 @@ class FeedRankingService
      *   - Contains hashtags (#): -0.1 (typically more curated)
      *   - Contains emojis in excess (>5): -0.05
      *
-     * In production this would be replaced by a proper ML classifier.
      */
     public function computeAuthenticityScore(string $content, ?string $imageUrl): float
     {

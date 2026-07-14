@@ -1,26 +1,6 @@
 # High-Level Design (HLD) / Technical Solution Document
 
-## 1. System Architecture
 
-The system follows a classic decoupled client-server architecture with a specialized microservice/module for machine learning tasks.
-
-```mermaid
-graph TD
-    Client[React Native App] -->|HTTPS / JSON| API[Laravel API Gateway / Core Backend]
-    
-    subgraph Backend Infrastructure
-        API -->|Read/Write Metadata| SQL[(Relational DB: MySQL/PostgreSQL)]
-        API -->|Vector Search & Upsert| VectorDB[(Vector DB: Pinecone)]
-        API -->|Upload Images| Storage[(File Storage: S3 / Local)]
-        API -->|Token/Session Auth| Auth[Sanctum]
-        API -.->|HTTP/gRPC| PyService[Python ML Service]
-    end
-    
-    subgraph Python Microservice
-        PyService -->|Generate Embeddings| SentenceTransformers[Sentence-Transformers Model]
-        PyService -->|Image Analysis| VisionModel[Authenticity/Filter Check Model]
-    end
-```
 
 ### Components:
 - **Mobile Client (React Native):** Handles the UI, infinite scrolling, and user interactions.
@@ -34,7 +14,7 @@ graph TD
 
 ## 2. Database Schema Design (Relational)
 
-We will use **PostgreSQL** or **MySQL**. Below is the core schema.
+We will use **PostgreSQL**. Below is the core schema.
 
 ### `users`
 - `id` (PK, UUID or BIGINT)
@@ -166,11 +146,4 @@ As required by the brief, this project is built using AI agentic tools to move f
 
 ---
 
-## Next Steps / User Review Required
 
-> [!IMPORTANT]
-> Please review this High-Level Design. 
-> 1. Does the **Laravel + Python Microservice** split align with how you want to build this?
-> 2. Are you comfortable using **Pinecone** for the Vector DB, or would you prefer a local solution like **pgvector** to keep everything in one database?
-> 
-> Once approved, we can move forward with initializing the backend or the React Native app.
