@@ -1,0 +1,88 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Page-1" id="yhDf6MISfJdOJHl3uVI2">
+    <mxGraphModel dx="943" dy="549" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="mjZiTDijDBsjCY-iSwHf-1" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Semantic Search" vertex="1">
+          <mxGeometry height="30" width="230" x="260" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="mjZiTDijDBsjCY-iSwHf-15" edge="1" parent="1" source="mjZiTDijDBsjCY-iSwHf-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="mjZiTDijDBsjCY-iSwHf-3" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="mjZiTDijDBsjCY-iSwHf-2" parent="1" style="whiteSpace=wrap;html=1;" value="User Searches" vertex="1">
+          <mxGeometry height="60" width="120" x="60" y="70" as="geometry" />
+        </mxCell>
+        <mxCell id="mjZiTDijDBsjCY-iSwHf-16" edge="1" parent="1" source="mjZiTDijDBsjCY-iSwHf-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="mjZiTDijDBsjCY-iSwHf-4" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="mjZiTDijDBsjCY-iSwHf-3" parent="1" style="whiteSpace=wrap;html=1;" value="React Native" vertex="1">
+          <mxGeometry height="60" width="120" x="60" y="160" as="geometry" />
+        </mxCell>
+        <mxCell id="mjZiTDijDBsjCY-iSwHf-17" edge="1" parent="1" source="mjZiTDijDBsjCY-iSwHf-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="mjZiTDijDBsjCY-iSwHf-5" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="mjZiTDijDBsjCY-iSwHf-4" parent="1" style="whiteSpace=wrap;html=1;" value="Laravel" vertex="1">
+          <mxGeometry height="60" width="120" x="60" y="260" as="geometry" />
+        </mxCell>
+        <mxCell id="mjZiTDijDBsjCY-iSwHf-18" edge="1" parent="1" source="mjZiTDijDBsjCY-iSwHf-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="mjZiTDijDBsjCY-iSwHf-6" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="mjZiTDijDBsjCY-iSwHf-5" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="POST /search" vertex="1">
+          <mxGeometry height="60" width="120" x="60" y="370" as="geometry" />
+        </mxCell>
+        <mxCell id="mjZiTDijDBsjCY-iSwHf-19" edge="1" parent="1" source="mjZiTDijDBsjCY-iSwHf-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="mjZiTDijDBsjCY-iSwHf-7" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="mjZiTDijDBsjCY-iSwHf-6" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="FastAPI" vertex="1">
+          <mxGeometry height="60" width="120" x="290" y="370" as="geometry" />
+        </mxCell>
+        <mxCell id="mjZiTDijDBsjCY-iSwHf-20" edge="1" parent="1" source="mjZiTDijDBsjCY-iSwHf-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="mjZiTDijDBsjCY-iSwHf-8" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="mjZiTDijDBsjCY-iSwHf-7" parent="1" style="whiteSpace=wrap;html=1;" value="&#xa;SentenceTransformer&#xa;&#xa;" vertex="1">
+          <mxGeometry height="60" width="120" x="290" y="260" as="geometry" />
+        </mxCell>
+        <mxCell id="mjZiTDijDBsjCY-iSwHf-21" edge="1" parent="1" source="mjZiTDijDBsjCY-iSwHf-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="mjZiTDijDBsjCY-iSwHf-9" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="mjZiTDijDBsjCY-iSwHf-8" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Query Embedding" vertex="1">
+          <mxGeometry height="60" width="120" x="290" y="160" as="geometry" />
+        </mxCell>
+        <mxCell id="mjZiTDijDBsjCY-iSwHf-22" edge="1" parent="1" source="mjZiTDijDBsjCY-iSwHf-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="mjZiTDijDBsjCY-iSwHf-10" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="mjZiTDijDBsjCY-iSwHf-9" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Pinecone" vertex="1">
+          <mxGeometry height="60" width="120" x="290" y="70" as="geometry" />
+        </mxCell>
+        <mxCell id="mjZiTDijDBsjCY-iSwHf-23" edge="1" parent="1" source="mjZiTDijDBsjCY-iSwHf-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="mjZiTDijDBsjCY-iSwHf-11" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="mjZiTDijDBsjCY-iSwHf-10" parent="1" style="whiteSpace=wrap;html=1;" value="Cosine Similarity" vertex="1">
+          <mxGeometry height="60" width="120" x="460" y="70" as="geometry" />
+        </mxCell>
+        <mxCell id="mjZiTDijDBsjCY-iSwHf-24" edge="1" parent="1" source="mjZiTDijDBsjCY-iSwHf-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="mjZiTDijDBsjCY-iSwHf-12" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="mjZiTDijDBsjCY-iSwHf-11" parent="1" style="whiteSpace=wrap;html=1;" value="Matching Post IDs" vertex="1">
+          <mxGeometry height="60" width="120" x="460" y="160" as="geometry" />
+        </mxCell>
+        <mxCell id="mjZiTDijDBsjCY-iSwHf-25" edge="1" parent="1" source="mjZiTDijDBsjCY-iSwHf-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="mjZiTDijDBsjCY-iSwHf-13" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="mjZiTDijDBsjCY-iSwHf-12" parent="1" style="whiteSpace=wrap;html=1;" value="Laravel" vertex="1">
+          <mxGeometry height="60" width="120" x="460" y="260" as="geometry" />
+        </mxCell>
+        <mxCell id="mjZiTDijDBsjCY-iSwHf-26" edge="1" parent="1" source="mjZiTDijDBsjCY-iSwHf-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="mjZiTDijDBsjCY-iSwHf-14" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="mjZiTDijDBsjCY-iSwHf-13" parent="1" style="whiteSpace=wrap;html=1;" value="&amp;nbsp;Fetch Posts from MySQL" vertex="1">
+          <mxGeometry height="60" width="120" x="460" y="370" as="geometry" />
+        </mxCell>
+        <mxCell id="mjZiTDijDBsjCY-iSwHf-14" parent="1" style="whiteSpace=wrap;html=1;" value="Return Search Results" vertex="1">
+          <mxGeometry height="60" width="120" x="630" y="370" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

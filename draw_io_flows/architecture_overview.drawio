@@ -1,0 +1,40 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Page-1" id="2zug-3teU3dhFuP8f72x">
+    <mxGraphModel dx="943" dy="549" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="7Gphol4gKQrHlswbWNls-1" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;span style=&quot;font-size: 24px;&quot;&gt;Architecture Overview&lt;/span&gt;" vertex="1">
+          <mxGeometry height="30" width="320" x="240" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="7Gphol4gKQrHlswbWNls-7" edge="1" parent="1" source="7Gphol4gKQrHlswbWNls-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="7Gphol4gKQrHlswbWNls-3" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7Gphol4gKQrHlswbWNls-2" parent="1" style="whiteSpace=wrap;html=1;" value="React Native" vertex="1">
+          <mxGeometry height="60" width="120" x="70" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="7Gphol4gKQrHlswbWNls-8" edge="1" parent="1" source="7Gphol4gKQrHlswbWNls-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="7Gphol4gKQrHlswbWNls-4" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7Gphol4gKQrHlswbWNls-3" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Laravel Backend&lt;br&gt;&lt;font style=&quot;font-size: 8px;&quot;&gt;Authentication&lt;br&gt;&amp;nbsp;Posts&lt;br&gt;Feed Ranking&lt;br&gt;Search&lt;br&gt;ML API Calls&lt;/font&gt;" vertex="1">
+          <mxGeometry height="120" width="120" x="70" y="180" as="geometry" />
+        </mxCell>
+        <mxCell id="7Gphol4gKQrHlswbWNls-9" edge="1" parent="1" source="7Gphol4gKQrHlswbWNls-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="7Gphol4gKQrHlswbWNls-5" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7Gphol4gKQrHlswbWNls-4" parent="1" style="whiteSpace=wrap;html=1;" value="MySQL" vertex="1">
+          <mxGeometry height="60" width="120" x="70" y="360" as="geometry" />
+        </mxCell>
+        <mxCell id="7Gphol4gKQrHlswbWNls-10" edge="1" parent="1" source="7Gphol4gKQrHlswbWNls-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="7Gphol4gKQrHlswbWNls-6" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7Gphol4gKQrHlswbWNls-5" parent="1" style="whiteSpace=wrap;html=1;" value="FastAPI" vertex="1">
+          <mxGeometry height="60" width="120" x="240" y="360" as="geometry" />
+        </mxCell>
+        <mxCell id="7Gphol4gKQrHlswbWNls-6" parent="1" style="whiteSpace=wrap;html=1;" value="Pinecone" vertex="1">
+          <mxGeometry height="60" width="120" x="240" y="240" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

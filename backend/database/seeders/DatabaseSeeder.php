@@ -5,8 +5,11 @@ namespace Database\Seeders;
 use App\Models\Interaction;
 use App\Models\Post;
 use App\Models\User;
+use App\Services\EmbeddingService;
+use App\Services\FeedRankingService;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Http;
 
 class DatabaseSeeder extends Seeder
 {
@@ -101,5 +104,31 @@ class DatabaseSeeder extends Seeder
         foreach ($usersData as $ud) {
             $this->command->info('  ' . $ud['email'] . ' / password123');
         }
+
+        // -------------------------------------------------------
+        // Upsert all post embeddings into the Python ML service
+        // so that semantic search works immediately after seeding.
+        // -------------------------------------------------------
+        $this->command->info('Upserting post embeddings into ML service...');
+        $embeddingService = app(EmbeddingService::class);
+        $mlServiceUrl = config('services.ml_service.url', 'http://localhost:8001');
+        $upserted = 0;
+
+        foreach (Post::all() as $post) {
+            try {
+                $embedding = $embeddingService->embed($post->content);
+                Http::timeout(10)->post("{$mlServiceUrl}/upsert", [
+                    'post_id'    => $post->id,
+                    'author_id'  => $post->user_id,
+                    'embedding'  => $embedding,
+                    'created_at' => $post->created_at->toIso8601String(),
+                ]);
+                $upserted++;
+            } catch (\Exception $e) {
+                $this->command->warn("Could not upsert post {$post->id}: " . $e->getMessage());
+            }
+        }
+
+        $this->command->info("Upserted {$upserted} post embeddings. Semantic search is ready.");
     }
 }

@@ -1,0 +1,73 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Page-1" id="iyzGuOz6SraYD6sTHo-w">
+    <mxGraphModel dx="943" dy="549" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="XB-OKnERm83RuP9l3Wam-1" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;User Creates Post&lt;/font&gt;" vertex="1">
+          <mxGeometry height="30" width="300" x="260" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="XB-OKnERm83RuP9l3Wam-23" edge="1" parent="1" source="XB-OKnERm83RuP9l3Wam-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="XB-OKnERm83RuP9l3Wam-3" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="XB-OKnERm83RuP9l3Wam-2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="User Creates Post" vertex="1">
+          <mxGeometry height="60" width="120" x="60" y="130" as="geometry" />
+        </mxCell>
+        <mxCell id="XB-OKnERm83RuP9l3Wam-22" edge="1" parent="1" source="XB-OKnERm83RuP9l3Wam-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="XB-OKnERm83RuP9l3Wam-4" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="XB-OKnERm83RuP9l3Wam-3" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="React Native" vertex="1">
+          <mxGeometry height="60" width="120" x="60" y="230" as="geometry" />
+        </mxCell>
+        <mxCell id="XB-OKnERm83RuP9l3Wam-21" edge="1" parent="1" source="XB-OKnERm83RuP9l3Wam-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="XB-OKnERm83RuP9l3Wam-5" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="XB-OKnERm83RuP9l3Wam-4" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Laravel" vertex="1">
+          <mxGeometry height="60" width="120" x="60" y="320" as="geometry" />
+        </mxCell>
+        <mxCell id="XB-OKnERm83RuP9l3Wam-20" edge="1" parent="1" source="XB-OKnERm83RuP9l3Wam-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="XB-OKnERm83RuP9l3Wam-6" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="XB-OKnERm83RuP9l3Wam-5" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Compute Authenticity Score" vertex="1">
+          <mxGeometry height="60" width="120" x="60" y="410" as="geometry" />
+        </mxCell>
+        <mxCell id="XB-OKnERm83RuP9l3Wam-19" edge="1" parent="1" source="XB-OKnERm83RuP9l3Wam-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="XB-OKnERm83RuP9l3Wam-7" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="XB-OKnERm83RuP9l3Wam-6" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Save Post in MySQL" vertex="1">
+          <mxGeometry height="60" width="120" x="60" y="510" as="geometry" />
+        </mxCell>
+        <mxCell id="XB-OKnERm83RuP9l3Wam-18" edge="1" parent="1" source="XB-OKnERm83RuP9l3Wam-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="XB-OKnERm83RuP9l3Wam-9" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="XB-OKnERm83RuP9l3Wam-7" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="POST /embed&lt;br&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="120" x="220" y="510" as="geometry" />
+        </mxCell>
+        <mxCell id="XB-OKnERm83RuP9l3Wam-8" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Generate an embedding from text.&lt;br&gt;&lt;br&gt;Input&amp;nbsp;&lt;br&gt;{&quot;text&quot;: &lt;span class=&quot;ͼk&quot;&gt;&quot;I made homemade cappuccino.&quot;&lt;/span&gt;}&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;output&lt;/div&gt;&lt;div&gt;{&amp;nbsp;&amp;nbsp;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&quot;embedding&quot;: [&lt;/span&gt;&lt;span class=&quot;ͼj&quot; style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;384&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt; numbers],&lt;/span&gt;&lt;/div&gt;&lt;div&gt;  &quot;model&quot;: &lt;span class=&quot;ͼk&quot;&gt;&quot;all-MiniLM-L6-v2&quot;&lt;/span&gt;,&lt;br&gt;  &quot;dimensions&quot;: &lt;span class=&quot;ͼj&quot;&gt;384&lt;/span&gt;&lt;br&gt;}&lt;/div&gt;" vertex="1">
+          <mxGeometry height="150" width="255" x="180" y="630" as="geometry" />
+        </mxCell>
+        <mxCell id="XB-OKnERm83RuP9l3Wam-17" edge="1" parent="1" source="XB-OKnERm83RuP9l3Wam-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="XB-OKnERm83RuP9l3Wam-10" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="XB-OKnERm83RuP9l3Wam-9" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="SentenceTransformer" vertex="1">
+          <mxGeometry height="60" width="120" x="220" y="410" as="geometry" />
+        </mxCell>
+        <mxCell id="XB-OKnERm83RuP9l3Wam-16" edge="1" parent="1" source="XB-OKnERm83RuP9l3Wam-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="XB-OKnERm83RuP9l3Wam-11" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="XB-OKnERm83RuP9l3Wam-10" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="384-dimensional Embedding" vertex="1">
+          <mxGeometry height="60" width="120" x="220" y="320" as="geometry" />
+        </mxCell>
+        <mxCell id="XB-OKnERm83RuP9l3Wam-15" edge="1" parent="1" source="XB-OKnERm83RuP9l3Wam-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="XB-OKnERm83RuP9l3Wam-12" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="XB-OKnERm83RuP9l3Wam-11" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="POST /upsert" vertex="1">
+          <mxGeometry height="60" width="120" x="220" y="230" as="geometry" />
+        </mxCell>
+        <mxCell id="XB-OKnERm83RuP9l3Wam-12" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Pinecone" vertex="1">
+          <mxGeometry height="60" width="120" x="220" y="130" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

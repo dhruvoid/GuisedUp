@@ -247,7 +247,7 @@ export default function FeedScreen() {
 
   // ── Header (sticky) ───────────────────────────────────────────────────────
 
-  const ListHeader = () => (
+  const listHeader = (
     <View style={styles.headerContainer}>
       {/* App header */}
       <View style={styles.appHeader}>
@@ -293,7 +293,7 @@ export default function FeedScreen() {
 
       {isInitLoading ? (
         <View style={styles.container}>
-          <ListHeader />
+          {listHeader}
           {[1, 2, 3].map((i) => (
             <SkeletonCard key={i} />
           ))}
@@ -304,7 +304,7 @@ export default function FeedScreen() {
           data={displayData}
           keyExtractor={(item) => String(item.id)}
           renderItem={renderPost}
-          ListHeaderComponent={<ListHeader />}
+          ListHeaderComponent={listHeader}
           ListFooterComponent={renderFooter}
           ListEmptyComponent={renderEmpty}
           onEndReached={handleEndReached}
